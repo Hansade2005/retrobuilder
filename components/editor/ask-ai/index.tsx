@@ -438,7 +438,7 @@ export function AskAI({
         )}
       </div>
       <audio ref={audio} id="audio" className="hidden">
-  <source src="/success.wav" type="audio/wav" />
+<source src="/success.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </div>

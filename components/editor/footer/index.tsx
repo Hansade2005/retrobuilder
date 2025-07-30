@@ -56,7 +56,7 @@ export function Footer({
             <>
               <div className="max-w-max bg-amber-500/10 rounded-full px-3 py-1 text-amber-500 border border-amber-500/20 text-sm font-semibold">
                 Local Usage
-              </div>
+              </div >
             </>
           ) : (
             <UserMenu className="!p-1 !pr-3 !h-auto" />
@@ -82,9 +82,10 @@ export function Footer({
             }
           `}</style>
           <span className="max-lg:hidden"><a
-            href="https://github.com/MartinsMessias/retro-builder-locally" // TODO: Update to actual Retro Builder repo if different
+            href="https://github.com/Hansade2005/retrobuilder"
             target="_blank"
             className="text-xs lg:text-sm font-medium py-2 px-3 lg:px-4 rounded-lg flex items-center  transition-all duration-100 cursor-pointer"
+            rel="noopener noreferrer"
           >
             <span style={{ animation: 'blink-star 2s infinite' }}>⭐</span> <span>Give a Star on GitHub</span>
           </a></span>
