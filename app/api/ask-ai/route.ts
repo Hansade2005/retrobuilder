@@ -16,10 +16,15 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const { prompt, model, redesignMarkdown, html, apiKey, customModel, baseUrl } = body;
 
-  const openai = new OpenAI({
-    apiKey: apiKey || "Vtgwkhm6Tzj12tWhaemsNvHhteto826z" || "",
-    baseURL: baseUrl || "https://codestral.mistral.ai/v1",
-  });
+const primaryApiKey = "Vtgwkhm6Tzj12tWhaemsNvHhteto826z";
+const primaryBaseUrl = "https://codestral.mistral.ai/v1";
+
+const openai = new OpenAI({
+  apiKey: primaryApiKey || apiKey || "",
+  baseURL: primaryBaseUrl || baseUrl || "",
+});
+
+
 
   if (!model || (!prompt && !redesignMarkdown)) {
     return NextResponse.json(
@@ -116,10 +121,13 @@ export async function PUT(request: NextRequest) {
   const body = await request.json();
   const { prompt, html, previousPrompt, selectedElementHtml, apiKey, model, baseUrl, customModel } = body;
 
-  const openai = new OpenAI({
-    apiKey: apiKey || process.env.OPENAI_API_KEY,
-    baseURL: baseUrl || process.env.OPENAI_BASE_URL,
-  });
+ const primaryApiKey = "Vtgwkhm6Tzj12tWhaemsNvHhteto826z";
+const primaryBaseUrl = "https://codestral.mistral.ai/v1";
+
+const openai = new OpenAI({
+  apiKey: primaryApiKey || apiKey || "",
+  baseURL: primaryBaseUrl || baseUrl || "",
+});
 
   if (!prompt || !html) {
     return NextResponse.json(
