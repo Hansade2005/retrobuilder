@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { MODELS } from "@/lib/providers";
 import { HtmlHistory } from "@/types";
 import { InviteFriends } from "@/components/invite-friends";
-import { Settings } from "@/components/editor/ask-ai/settings";
+// import { Settings } from "@/components/editor/ask-ai/settings";
 import { ReImagine } from "@/components/editor/ask-ai/re-imagine";
 import Loading from "@/components/loading";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -399,6 +399,7 @@ export function AskAI({
             <InviteFriends />
           </div>
           <div className="flex items-center justify-end gap-2">
+            {/*
             <Settings
               provider={provider as string}
               model={model as string}
@@ -409,6 +410,7 @@ export function AskAI({
               isFollowUp={!isSameHtml && isFollowUp}
               onClose={setOpenProvider}
             />
+            */}
             <Button
               size="iconXs"
               disabled={isAiWorking || !prompt.trim()}
